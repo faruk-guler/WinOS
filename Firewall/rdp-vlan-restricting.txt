@@ -8,6 +8,7 @@ New-NetFirewallRule -DisplayName "RDP-TCP from 192.168.47.0/24" -Direction Inbou
 # Sadece 192.168.47.0/24 ağından UDP üzerinden RDP izni:
 New-NetFirewallRule -DisplayName "RDP-UDP from 192.168.47.0/24" -Direction Inbound -Protocol UDP -LocalPort 3389 -RemoteAddress 192.168.47.0/24 -Action Allow -Profile Any
 
-# Kontrol:s
+# Kontrol:
 tnc 192.168.47.175 -port 3389
+
 
