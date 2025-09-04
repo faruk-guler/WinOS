@@ -1,0 +1,12 @@
+
+# Varsayılan tüm RDP kurallarını devre dışı bırak:
+# Set-NetFirewallRule -DisplayGroup "Remote Desktop" -Enabled False
+
+# Sadece 192.168.47.0/24 ağından TCP üzerinden RDP izni:
+New-NetFirewallRule -DisplayName "RDP-TCP from 192.168.47.0/24" -Direction Inbound -Protocol TCP -LocalPort 3389 -RemoteAddress 192.168.47.0/24 -Action Allow -Profile Any
+
+# Sadece 192.168.47.0/24 ağından UDP üzerinden RDP izni:
+New-NetFirewallRule -DisplayName "RDP-UDP from 192.168.47.0/24" -Direction Inbound -Protocol UDP -LocalPort 3389 -RemoteAddress 192.168.47.0/24 -Action Allow -Profile Any
+
+# Kontrol:
+tnc 192.168.47.175 -port 3389
