@@ -1,0 +1,12 @@
+# Registry ile USB Devre Dışı Bırakma
+
+# USB depolama cihazlarını devre dışı bırakma
+# Registry Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBSTOR
+# Value: Start
+# Data: 4 (Disabled)
+
+# PowerShell ile registry değişikliği
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR" -Name "Start" -Value 4
+
+# USB'yi tekrar etkinleştirme
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR" -Name "Start" -Value 3
