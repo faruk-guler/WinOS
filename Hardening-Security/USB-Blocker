@@ -1,4 +1,4 @@
-# Registry ile USB Devre Dışı Bırakma
+# USB Kontrol-Blocker
 
 # USB depolama cihazlarını devre dışı bırakma
 # Registry Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBSTOR
@@ -10,3 +10,10 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR" -Name "
 
 # USB'yi tekrar etkinleştirme
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR" -Name "Start" -Value 3
+
+# Belirli USB cihazlarına izin verme (Device ID ile)
+# Group Policy Management Console'da:
+# Computer Configuration → Administrative Templates → System → Device Installation → Device Installation Restrictions
+
+# Belirli donanım ID'lerine izin verme
+# Allow installation of devices that match any of these device IDs: USB\VID_1234&PID_5678
