@@ -1,0 +1,19 @@
+
+# Mevcut Uzak Sunucu Yönetim Araçları Durumunu Kontrol Etmek:
+Get-WindowsCapability -Name RSAT* -Online | Select-Object -Property DisplayName, Name, State
+
+# Example:
+# Add-WindowsCapability -Online -Name "<Tool_Name>"
+# Add-WindowsCapability -Online -Name "Rsat.Dns.Tools~~~~0.0.1.0"
+
+# Etki Alanı Hizmetleri ve Hafif Dizin Hizmetleri Araçlarını kurmak:
+Add-WindowsCapability -Online -Name "Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0"
+
+# Tüm Uzak Sunucu Yönetim Araçlarını kurmak:
+Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability -Online
+
+# Kurulu Uzak Sunucu Yönetim Araçları Bileşenini Kaldırmak: [Failover Cluster]
+Remove-WindowsCapability -Online -Name "Rsat.FailoverCluster.Management.Tools~~~~0.0.1.0" 
+
+
+
