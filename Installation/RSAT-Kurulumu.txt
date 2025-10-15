@@ -1,5 +1,5 @@
 
-# Mevcut Uzak Sunucu Yönetim Araçları Durumunu Kontrol Etmek:
+# Mevcut Uzak Sunucu Yönetim Araçlarını ve Sunucudaki Durumunu Kontrol Etmek:
 Get-WindowsCapability -Name RSAT* -Online | Select-Object -Property DisplayName, Name, State
 
 # Example:
@@ -14,5 +14,6 @@ Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability -Online
 
 # Kurulu Uzak Sunucu Yönetim Araçları Bileşenini Kaldırmak: [Failover Cluster]
 Remove-WindowsCapability -Online -Name "Rsat.FailoverCluster.Management.Tools~~~~0.0.1.0" 
+
 
 
