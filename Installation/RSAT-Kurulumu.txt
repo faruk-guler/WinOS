@@ -16,4 +16,3 @@ Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability -Online
 Remove-WindowsCapability -Online -Name "Rsat.FailoverCluster.Management.Tools~~~~0.0.1.0" 
 
 
-
