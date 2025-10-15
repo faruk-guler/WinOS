@@ -1,0 +1,10 @@
+# Yazıcı servislerini kontrol etme
+Get-Service -Name "Spooler"
+
+# Print Spooler servisini yeniden başlatma
+Restart-Service -Name "Spooler"
+
+# Yazıcı kuyruğunu temizleme
+Stop-Service -Name "Spooler"
+Remove-Item "C:\Windows\System32\spool\PRINTERS\*" -Force
+Start-Service -Name "Spooler"
