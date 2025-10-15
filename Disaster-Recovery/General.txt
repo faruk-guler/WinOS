@@ -1,0 +1,17 @@
+# 3-2-1 Backup Kuralı
+Neden: 3-2-1 kuralı, veri kaybına karşı en etkili yedekleme stratejisidir.
+
+3 kopya: Orijinal + 2 yedek kopya
+2 farklı medya: Farklı depolama türleri (HDD, SSD, Tape)
+1 offsite: Fiziksel olarak farklı konumda
+Şifreleme: Tüm yedekleri şifreleyin
+Test edin: Yedeklerin geri yüklenebilir olduğunu doğrulayın
+
+# Ransomware Koruması
+Neden: Ransomware saldırıları, yedekleri de hedef alabilir. Yedeklerin korunması kritik öneme sahiptir.
+
+Air-gapped backup: Ağdan izole yedekleme
+Immutable storage: Değiştirilemez depolama
+Versioning: Birden fazla yedek versiyonu
+Access control: Yedeklere sınırlı erişim
+Monitoring: Yedekleme süreçlerini izleme
