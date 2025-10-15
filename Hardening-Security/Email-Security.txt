@@ -1,0 +1,26 @@
+E-posta güvenliği, spam, phishing ve malware saldırılarından korunma yöntemleridir.
+# 📧 SPF, DKIM, DMARC Yapılandırması:
+
+SPF (Sender Policy Framework) Kaydı
+Neden: SPF, e-posta gönderen sunucunun yetkili olup olmadığını kontrol eder. Sahte e-posta gönderimini engeller.
+
+DNS yönetim paneline giriş yapın: Domain sağlayıcınızın DNS ayarlarına erişin
+TXT kaydı oluşturun: "v=spf1 include:_spf.google.com ~all"
+IP adreslerini ekleyin: "v=spf1 ip4:192.168.1.10 include:_spf.google.com ~all"
+Test edin: SPF kaydınızı online araçlarla test edin
+
+DKIM (DomainKeys Identified Mail) Yapılandırması
+Neden: DKIM, e-postaların gerçekten gönderen domain'den geldiğini doğrular. E-posta bütünlüğünü sağlar.
+
+Mail sunucunuzda DKIM'i etkinleştirin: Exchange Server veya diğer mail sunucularında
+Public key'i DNS'e ekleyin: CNAME kaydı olarak
+Selector'ı belirleyin: Örneğin "selector1._domainkey"
+Test edin: DKIM imzasını kontrol edin
+
+DMARC (Domain-based Message Authentication) Politikası
+Neden: DMARC, SPF ve DKIM sonuçlarına göre e-postaların ne yapılacağını belirler. Phishing saldırılarını engeller.
+
+DMARC politikası oluşturun: "v=DMARC1; p=quarantine; rua=mailto:dmarc@yourdomain.com"
+Raporlama e-postası ayarlayın: DMARC raporlarını alacak e-posta adresi
+Politika seviyesini belirleyin: none, quarantine, reject
+Raporları analiz edin: DMARC raporlarını düzenli olarak kontrol edin
