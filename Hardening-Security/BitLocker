@@ -1,0 +1,11 @@
+# BitLocker durumunu kontrol etme
+Get-BitLockerVolume
+
+# C: sürücüsünü şifreleme
+Enable-BitLocker -MountPoint "C:" -EncryptionMethod XtsAes256 -UsedSpaceOnly
+
+# BitLocker recovery key'ini görüntüleme
+Get-BitLockerVolume -MountPoint "C:" | Select-Object KeyProtector
+
+# BitLocker'ı devre dışı bırakma
+Disable-BitLocker -MountPoint "C:"
