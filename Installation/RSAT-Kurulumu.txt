@@ -9,11 +9,8 @@ Get-WindowsCapability -Name RSAT* -Online | Select-Object -Property DisplayName,
 # Etki Alanı Hizmetleri ve Hafif Dizin Hizmetleri Araçlarını kurmak:
 Add-WindowsCapability -Online -Name "Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0"
 
-# Tüm Uzak Sunucu Yönetim Araçlarını kurmak:
+# Tüm Uzak Sunucu Yönetim Araçlarını kurmak: [Tüm]
 Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability -Online
 
 # Kurulu Uzak Sunucu Yönetim Araçları Bileşenini Kaldırmak: [Failover Cluster]
-Remove-WindowsCapability -Online -Name "Rsat.FailoverCluster.Management.Tools~~~~0.0.1.0" 
-
-
-
+Remove-WindowsCapability -Online -Name "Rsat.FailoverCluster.Management.Tools~~~~0.0.1.0"
