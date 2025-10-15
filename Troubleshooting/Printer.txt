@@ -8,3 +8,15 @@ Restart-Service -Name "Spooler"
 Stop-Service -Name "Spooler"
 Remove-Item "C:\Windows\System32\spool\PRINTERS\*" -Force
 Start-Service -Name "Spooler"
+
+# Yazıcı driver'larını listeleme
+Get-PrinterDriver
+
+# Yazıcıları listeleme
+Get-Printer
+
+# Yazıcı durumunu kontrol etme
+Get-Printer | Select-Object Name, PrinterStatus, DriverName
+
+# Yazıcı test sayfası gönderme
+Get-Printer | ForEach-Object {Write-Printer -Name $_.Name -InputObject "Test Page"}
