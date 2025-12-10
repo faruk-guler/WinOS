@@ -40,7 +40,7 @@ reg export HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration C:\CA-Ba
 -CRL yayın noktalarının erişilebilirliği (HTTP/LDAP) ve AD replikasyonu kontrol edilmeli.
  ```
 
-# 🟢📌 YENİ SERVER HAZIRLIKLARI VE MIGRATION
+# 📌 YENİ SERVER HAZIRLIKLARI VE MIGRATION
 
 ## Önemli:
  ```cmd
@@ -72,7 +72,7 @@ certutil -restoreKey
 Start-Service -Name CertSvc
  ```
 
-## Verifying the Migration:
+## 🟢 Verifying the Migration:
  ```cmd
 certutil -store -enterprise root
 certutil -ping
