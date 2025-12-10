@@ -1,10 +1,10 @@
 # 📜 ADCS Microsoft Certificate Services Migration
 
-## HSM ve Ön Hazırlıklar:
+## 📌 HSM Bilgilendime ve Ön Hazırlıklar:
 
  ```cmd
--Eğer CA donanım güvenlik modülü (HSM) kullanıyorsa, HSM üreticisinin sağladığı prosedürleri izleyin.
--Eğer kaynak sunucudan CA rolünü kaldırmadan hedef sunucuya yüklemek istiyorsanız, hedef sunucuda AD CS hizmetini (CertSvc) devre dışı bırakın.
+-CA donanım güvenlik modülü (HSM) kullanıyorsa, HSM üreticisinin sağladığı prosedürleri izleyin.
+-Kaynak sunucudan CA rolünü kaldırmadan hedef sunucuya yüklemek istiyorsanız, hedef sunucuda AD CS hizmetini (CertSvc) devre dışı bırakın.
 -Eski CA’yı hemen kapatmak yerine bir süre paralel çalıştırın; istemcilerin yeni CA’dan sertifika alıp CRL doğrulaması yaptığını gözlemleyin.
 -CA rol hizmetini kaynak sunucudan kaldırılması önerilir. CA rol hizmetini kaldırmak, CA’nın yapılandırma verilerini AD DS’den temizler.
 -CA rolü kaldırıldıktan sonra sunucuyu yeniden başlatın.
@@ -33,14 +33,14 @@ HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration
 reg export HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration C:\CA-Backup\CA-Registry.reg
  ```
 
-## Taşıma Öncei Uzatılmış CRL Yayınlama:
+## Taşıma Öncei Uzatılmış CRL Yayınlama Hakkında:
  ```cmd
 -CRL süresini uzatma: Taşıma uzun sürecekse CRL geçerlilik süresini uzatmak hataları azaltır; ancak zorunlu değildir.
 -AIA/CDP kontrolleri: Yeni sunucuda AIA ve CDP URL’lerinin erişilebilirliğini doğrulayın; hostname veya IP değişirse URL’leri güncelleyin.
 -CRL yayın noktalarının erişilebilirliği (HTTP/LDAP) ve AD replikasyonu kontrol edilmeli.
  ```
 
-# 📌 YENİ SERVER HAZIRLIKLARI VE MIGRATION
+#🟢 YENİ SERVER HAZIRLIKLARI VE MIGRATION
 
 ## Önemli:
  ```cmd
