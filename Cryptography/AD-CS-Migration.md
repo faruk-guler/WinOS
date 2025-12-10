@@ -91,7 +91,7 @@ Hatta bazı durumlarda taşıma test edilene kadar eski CA’yı açık bırakma
 Eski sunucu üzerindeki CA rolü kaldırılmadığı sürece istemciler hala eski CA’yı görebilir, CRL ve sertifika sorgulamaları çalışır.
  ```
 
-## Links:
+## 🔗 Links:
  ```cmd
 https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/migrate-certification-authority?tabs=server-manager
 https://www.starwindsoftware.com/blog/migrate-root-ca-to-a-new-server/
