@@ -51,5 +51,6 @@ certutil -backupDB C:\CAbackups\CA_DB_Backup
 # Back up CA cert + private key to a PFX
 certutil -backupKey C:\CAbackups\CA_Key_Backup
  ```
+|| Never store CA backups on the CA itself. Keep them somewhere safe.
 
 ## Creating Certificate Templates & Auto-Enrollment
