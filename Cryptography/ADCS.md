@@ -42,4 +42,14 @@ Install-AdcsWebEnrollment `
     -Force
  ```
 
+## Backup Your CA (Highly Recommended) -PS
+
+ ```cmd
+# Back up DB + logs
+certutil -backupDB C:\CAbackups\CA_DB_Backup
+
+# Back up CA cert + private key to a PFX
+certutil -backupKey C:\CAbackups\CA_Key_Backup
+ ```
+
 ## Creating Certificate Templates & Auto-Enrollment
