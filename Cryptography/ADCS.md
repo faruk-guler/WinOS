@@ -53,4 +53,28 @@ certutil -backupKey C:\CAbackups\CA_Key_Backup
  ```
 > Never store CA backups on the CA itself. Keep them somewhere safe.
 
-## Creating Certificate Templates & Auto-Enrollment
+# Creating Certificate Templates & Auto-Enrollment
+
+## Step 1 — Create the certificate templates:
+> We’ll duplicate the built-in templates and tune them. Use the GUI for this. Trying to wrestle Certificate Templates into submission with PowerShell is like teaching a cat to fetch. Technically possible, but don’t say I didn’t warn you.
+
+## Create the Machine (Computer) template 
+ ```cmd
+Create the Machine (Computer) template
+Log on to your Certificate Authority.
+Run → mmc.exe → File → Add/Remove Snap-in → Certificate Templates → Add → OK.
+In the list, right-click Computer → Duplicate Template.
+Compatibility: choose values appropriate for your environment (Server 2016 / Windows 10 or later is safe). This controls which options are available; pick something that covers your oldest supported clients.
+On the General tab give it a clear name: 8021X-Computer.
+On Request Handling:
+Leave key purpose as default.
+Key size: leave default or set minimum (2048 recommended, 4096 okay). Do not allow private key export (uncheck “Allow private key to be exported”).
+On Subject Name:
+Select Build from this Active Directory information.
+Check Include this information in alternate subject name → DNS name (so SAN contains the machine DNS name). This helps some RADIUS setups and troubleshooting tools.
+On Extensions → Application Policies, confirm Client Authentication is present. If not, add it.
+On Security:
+Add Domain Computers (or the specific computer groups you want to receive the certificates) and grant Enroll and Autoenroll.
+Remove unnecessary groups if you are being strict.
+Click OK to save the template.
+ ```
