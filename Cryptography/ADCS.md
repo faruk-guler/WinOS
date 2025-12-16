@@ -91,6 +91,6 @@ The CA is now aware of those templates and will issue certs based on them.
 
 ## Links:
  ```cmd
-https://medium.com/@moleyt/building-a-certificate-authority-in-active-directory-a-step-by-step-guide-10b8eff5ee28
+https://medium.com/@alexswin/building-a-certificate-authority-in-active-directory-a-step-by-step-guide-10b8eff5ee28
 https://medium.com/@alexswin/certificates-in-action-templates-auto-enrollment-and-the-path-to-wi-fi-bliss-f5f381208c82
  ```
