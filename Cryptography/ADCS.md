@@ -78,3 +78,13 @@ Add Domain Computers (or the specific computer groups you want to receive the ce
 Remove unnecessary groups if you are being strict.
 Click OK to save the template.
  ```
+## Step 2 — Publish the templates on the CA
+> Time to let your CA know it’s not just sitting there looking pretty. Publishing templates is the moment you tell it, “Go forth and issue certificates!” One click, and suddenly your carefully crafted templates are live , like magic!
+
+ ```cmd
+On your CA server open Certification Authority (certsrv.msc).
+Right-click Certificate Templates → New → Certificate Template to Issue.
+Select 8021X-Computer, 8021X-RADIUS-Server (and 8021X-User if you made it) → OK.
+ ```
+
+The CA is now aware of those templates and will issue certs based on them.
